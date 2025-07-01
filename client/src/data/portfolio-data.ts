@@ -2,8 +2,8 @@ export interface App {
   id: string;
   name: string;
   category: string;
-  icon: string;
-  iconBg: string;
+  imageUrl: string;
+  screenshots: string[];
   description: string;
   features: string[];
   technologies: string[];
@@ -42,187 +42,178 @@ export interface TechnologyCategory {
 
 export const apps: App[] = [
   {
-    id: 'taskflow',
-    name: 'TaskFlow',
-    category: 'Productivity & Task Management',
-    icon: 'CheckSquare',
-    iconBg: 'bg-gradient-to-br from-green-400 to-green-600',
-    description: 'A sophisticated task management application designed to help individuals and teams organize, prioritize, and track their work efficiently. TaskFlow combines intuitive design with powerful features to create a seamless productivity experience.',
-    features: [
-      'AI-powered task prioritization',
-      'Real-time team collaboration',
-      'Advanced project tracking',
-      'Customizable workflows',
-      'Smart deadline management',
-      'Cross-platform synchronization'
+    id: 'mataa-customer',
+    screenshots: [
+
     ],
-    technologies: ['React Native', 'TypeScript', 'GraphQL', 'Firebase', 'Redux Toolkit']
+    name: 'Mataa Customer App',
+    category: 'E-commerce & Delivery',
+    imageUrl: '/images/mataa_full_logo.png',
+    description: 'A comprehensive e-commerce and delivery platform for Libyan customers. Built from scratch with Clean Architecture, the app proved resilient during a major backend migration. Used by over 50,000 users across Libya.',
+    features: [
+      'Real-time order tracking',
+      'Secure payment processing',
+      'Push notifications for order updates',
+      'Multi-vendor marketplace',
+      'User authentication and profiles',
+      'Clean Architecture implementation'
+    ],
+    technologies: ['Flutter', 'Dart', 'Clean Architecture', 'BLoC', 'Firebase', 'REST APIs']
   },
   {
-    id: 'fittrack',
-    name: 'FitTrack',
-    category: 'Health & Fitness Tracking',
-    icon: 'Heart',
-    iconBg: 'bg-gradient-to-br from-red-400 to-red-600',
-    description: 'A comprehensive fitness tracking application that helps users maintain a healthy lifestyle through detailed workout monitoring, nutrition tracking, and health insights. FitTrack integrates with various wearable devices for accurate data collection.',
-    features: [
-      'Workout planning and tracking',
-      'Nutrition and calorie monitoring',
-      'Wearable device integration',
-      'Progress analytics and insights',
-      'Social challenges and sharing',
-      'Personal trainer connectivity'
+    id: 'mataa-partner',
+    name: 'Mataa Partner App',
+    category: 'Business & Vendor Management',
+    imageUrl: '/images/mataa_partner.png',
+    screenshots: [
+
     ],
-    technologies: ['Flutter', 'Dart', 'HealthKit', 'Google Fit', 'Firebase']
+    description: 'Vendor management application integrating with an Odoo-based system for nearly 200 vendors nationwide. Features seamless authentication, data synchronization, and cross-platform compatibility.',
+    features: [
+      'Odoo system integration',
+      'Vendor inventory management',
+      'Order processing and fulfillment',
+      'Real-time data synchronization',
+      'Cross-platform compatibility',
+      'Responsive web version'
+    ],
+    technologies: ['Flutter', 'Dart', 'Odoo Integration', 'Clean Architecture', 'REST APIs']
   },
   {
-    id: 'budgetwise',
-    name: 'BudgetWise',
-    category: 'Personal Finance Management',
-    icon: 'PiggyBank',
-    iconBg: 'bg-gradient-to-br from-yellow-400 to-orange-500',
-    description: 'An intelligent personal finance management app that helps users take control of their financial health. BudgetWise provides comprehensive budgeting tools, expense tracking, and investment portfolio management in one secure platform.',
-    features: [
-      'Smart expense categorization',
-      'Bill reminders and alerts',
-      'Investment portfolio tracking',
-      'Budget planning and analysis',
-      'Bank account synchronization',
-      'Financial goal setting'
+    id: 'mataa-captain',
+    name: 'Mataa Captain',
+    category: 'Logistics & Delivery',
+    imageUrl: '/images/mataa_captain.png',
+    screenshots: [
+
     ],
-    technologies: ['React Native', 'Redux', 'Plaid API', 'Node.js', 'MongoDB']
+    description: 'Driver application for the Mataa delivery network. Features cloud-based delivery verification via image/document uploads and real-time order management for field delivery professionals.',
+    features: [
+      'Real-time delivery tracking',
+      'Cloud-based document verification',
+      'Image and document uploads',
+      'Route optimization',
+      'Order management system',
+      'Driver performance analytics'
+    ],
+    technologies: ['Flutter', 'Dart', 'Firebase', 'Clean Architecture', 'Google Maps API']
   },
   {
-    id: 'recipebook',
-    name: 'RecipeBook',
-    category: 'Food & Cooking',
-    icon: 'UtensilsCrossed',
-    iconBg: 'bg-gradient-to-br from-purple-400 to-purple-600',
-    description: 'A delightful cooking companion that brings together recipe discovery, meal planning, and cooking guidance. RecipeBook helps users explore new cuisines, plan meals, and cook with confidence through step-by-step instructions.',
-    features: [
-      'Recipe discovery and search',
-      'Meal planning calendar',
-      'Shopping list generation',
-      'Step-by-step cooking guide',
-      'Nutritional information',
-      'Community recipe sharing'
+    id: 'khadamat-customer',
+    name: 'Khadamat Customer App',
+    category: 'Home Services & Booking',
+    imageUrl: '/images/khadamat_customer.png',
+    screenshots: [
+
     ],
-    technologies: ['React Native', 'Firebase', 'Algolia Search', 'Stripe API']
+    description: 'On-demand home services platform for customers to book various services like plumbing, electrical work, and cleaning. Built with Flutter Clean Architecture ensuring separation of concerns and maintainability.',
+    features: [
+      'Service booking and scheduling',
+      'Real-time technician tracking',
+      'Secure payment processing',
+      'Service history and reviews',
+      'Multi-service categories',
+      'Customer support integration'
+    ],
+    technologies: ['Flutter', 'Dart', 'Clean Architecture', 'BLoC', 'Firebase']
   },
   {
-    id: 'travelmate',
-    name: 'TravelMate',
-    category: 'Travel & Navigation',
-    icon: 'Plane',
-    iconBg: 'bg-gradient-to-br from-blue-400 to-blue-600',
-    description: 'Your ultimate travel companion for planning, booking, and managing trips. TravelMate provides comprehensive travel tools including itinerary planning, local recommendations, and real-time travel updates.',
-    features: [
-      'Trip planning and itinerary',
-      'Flight and hotel booking',
-      'Local recommendations',
-      'Offline maps and navigation',
-      'Travel document storage',
-      'Expense tracking during trips'
+    id: 'khadamat-technician',
+    name: 'Khadamat Technician App',
+    category: 'Professional Services & Field Work',
+    imageUrl: '/images/khadamat_tech.png',
+    screenshots: [
+
     ],
-    technologies: ['Flutter', 'Google Maps API', 'Firebase', 'Stripe', 'REST APIs']
+    description: 'Professional technician application for field service workers. Features secure login, role-based access, and real-time order updates for service professionals across multiple categories.',
+    features: [
+      'Role-based access control',
+      'Real-time job notifications',
+      'Service completion tracking',
+      'Customer communication tools',
+      'Earnings and performance tracking',
+      'Professional profile management'
+    ],
+    technologies: ['Flutter', 'Dart', 'Clean Architecture', 'Firebase', 'BLoC']
   },
   {
-    id: 'mindspace',
-    name: 'MindSpace',
-    category: 'Mental Health & Wellness',
-    icon: 'Brain',
-    iconBg: 'bg-gradient-to-br from-indigo-400 to-indigo-600',
-    description: 'A comprehensive mental wellness platform that provides tools for meditation, stress management, and emotional well-being. MindSpace offers personalized wellness programs and professional support resources.',
-    features: [
-      'Guided meditation sessions',
-      'Mood tracking and analysis',
-      'Stress management tools',
-      'Professional therapist connection',
-      'Wellness challenges',
-      'Progress tracking and insights'
+    id: 'quran-radio',
+    name: 'Quran Radio App',
+    category: 'Religious & Audio Streaming',
+    imageUrl: '/images/quran_fm.png',
+    screenshots: [
+
     ],
-    technologies: ['React Native', 'Firebase', 'WebRTC', 'Push Notifications']
+    description: 'Flutter app for streaming Quran content with support for background playbook and various reciters. Features a clean, respectful interface designed for spiritual listening experiences.',
+    features: [
+      'Background audio playback',
+      'Multiple Quran reciters',
+      'Offline listening capability',
+      'Prayer time notifications',
+      'Beautiful Islamic UI design',
+      'Audio quality selection'
+    ],
+    technologies: ['Flutter', 'Dart', 'Audio Streaming', 'Background Processing']
+  },
+  {
+    id: 'libya-fm',
+    name: 'Libya FM',
+    category: 'Radio & Audio Streaming',
+    imageUrl: '/images/libya_fm.png',
+    screenshots: [
+
+    ],
+    description: 'Redesigned and stabilized radio streaming app for Libya FM. Enhanced UI/UX and performance improvements, providing a seamless audio streaming experience for Libyan radio listeners.',
+    features: [
+      'Live radio streaming',
+      'Enhanced UI/UX design',
+      'Performance optimization',
+      'Stable audio playback',
+      'Modern interface design',
+      'Broadcasting schedule'
+    ],
+    technologies: ['Flutter', 'Dart', 'Audio Streaming', 'UI/UX Design']
   }
 ];
 
 export const packages: Package[] = [
   {
-    name: 'react-native-smooth-picker',
-    description: 'A smooth and customizable picker component for React Native with haptic feedback and gesture support.',
-    stars: '1.2k',
-    downloads: '15.8k',
-    npmUrl: 'https://npmjs.com/package/react-native-smooth-picker',
-    githubUrl: 'https://github.com/alexmorgan/react-native-smooth-picker'
-  },
-  {
-    name: 'flutter-animated-charts',
-    description: 'Beautiful animated chart library for Flutter with support for line, bar, and pie charts.',
-    stars: '856',
-    downloads: '8.3k',
-    npmUrl: 'https://pub.dev/packages/flutter-animated-charts',
-    githubUrl: 'https://github.com/alexmorgan/flutter-animated-charts'
-  },
-  {
-    name: 'mobile-auth-flow',
-    description: 'Complete authentication flow for mobile apps with biometric support and social login integration.',
-    stars: '2.1k',
-    downloads: '22.5k',
-    npmUrl: 'https://npmjs.com/package/mobile-auth-flow',
-    githubUrl: 'https://github.com/alexmorgan/mobile-auth-flow'
-  },
-  {
-    name: 'react-native-camera-kit',
-    description: 'Advanced camera component with QR code scanning, filters, and real-time processing capabilities.',
-    stars: '3.7k',
-    downloads: '31.2k',
-    npmUrl: 'https://npmjs.com/package/react-native-camera-kit',
-    githubUrl: 'https://github.com/alexmorgan/react-native-camera-kit'
-  },
-  {
-    name: 'flutter-secure-storage-plus',
-    description: 'Enhanced secure storage solution for Flutter with encryption and biometric protection.',
-    stars: '1.9k',
-    downloads: '18.7k',
-    npmUrl: 'https://pub.dev/packages/flutter-secure-storage-plus',
-    githubUrl: 'https://github.com/alexmorgan/flutter-secure-storage-plus'
-  },
-  {
-    name: 'mobile-performance-monitor',
-    description: 'Real-time performance monitoring and analytics for mobile applications with crash reporting.',
-    stars: '1.4k',
-    downloads: '12.1k',
-    npmUrl: 'https://npmjs.com/package/mobile-performance-monitor',
-    githubUrl: 'https://github.com/alexmorgan/mobile-performance-monitor'
+    name: 'apple_foundation_flutter',
+    description: 'Flutter plugin providing access to native Apple Foundation framework APIs from Flutter applications. Demonstrates deep platform-channel communication and native iOS integration.',
+    stars: '5',
+    downloads: '100',
+    npmUrl: 'https://pub.dev/packages/apple_foundation_flutter',
+    githubUrl: 'https://github.com/AbdurahmanIbrahem/apple_foundation_flutter'
   }
 ];
 
 export const companies: Company[] = [
   {
-    name: 'TechCorp Solutions',
-    position: 'Senior Mobile Developer',
-    period: '2022 - Present',
-    description: 'Led a team of 5 developers in building cross-platform mobile applications for Fortune 500 clients. Implemented CI/CD pipelines, established coding standards, and mentored junior developers. Successfully delivered 8 major projects with 99.9% uptime and 4.8+ app store ratings.',
-    technologies: ['React Native', 'Flutter', 'TypeScript'],
+    name: 'Mataa App',
+    position: 'Mobile Applications Developer (Full Time)',
+    period: 'September 2024 – Present',
+    description: 'Built the new customer app from scratch with Clean Architecture, which proved resilient during major backend migration. Maintained and enhanced the original customer app, developed both Vendor and Driver apps using shared architecture. Delivered responsive web version of Vendor App and used Flutter Flavors for multiple environments.',
+    technologies: ['Flutter', 'Dart', 'Clean Architecture', 'BLoC', 'Flutter Flavors', 'fpdart', 'Dartz'],
     iconBg: 'bg-blue-600',
-    icon: 'Rocket'
-  },
-  {
-    name: 'InnovateMobile Inc.',
-    position: 'Mobile Developer',
-    period: '2020 - 2022',
-    description: 'Developed mobile applications for healthcare and fintech sectors. Specialized in creating HIPAA-compliant healthcare apps and secure payment solutions. Optimized app performance resulting in 40% faster load times and improved user retention by 25%.',
-    technologies: ['React Native', 'Redux', 'Firebase'],
-    iconBg: 'bg-green-600',
     icon: 'Smartphone'
   },
   {
-    name: 'StartupHub',
-    position: 'Junior Mobile Developer',
-    period: '2018 - 2020',
-    description: 'Worked on multiple startup projects, rapidly prototyping and iterating on mobile applications. Gained experience in agile development methodologies and direct client communication. Built MVP applications that helped secure $2M+ in funding for various startups.',
-    technologies: ['Flutter', 'Dart', 'Node.js'],
+    name: 'Khadamat',
+    position: 'Mobile Applications Developer (Part Time)',
+    period: 'May 2024 – Present',
+    description: 'Built and maintained Technician and Customer Apps for on-demand home services. Architected apps with Flutter Clean Architecture, developed reusable components and modules. Integrated secure login, role-based access, and real-time order updates.',
+    technologies: ['Flutter', 'Dart', 'Clean Architecture', 'Firebase', 'BLoC'],
+    iconBg: 'bg-green-600',
+    icon: 'Home'
+  },
+  {
+    name: 'Fannak Tech',
+    position: 'Mobile Applications Developer (Part Time)',
+    period: 'December 2024 – April 2025',
+    description: 'Redesigned and stabilized Libya FM radio streaming app, enhancing UI/UX and performance. Participated in multiple Flutter-based projects in production, applying modular architecture and debugging techniques.',
+    technologies: ['Flutter', 'Dart', 'UI/UX Design', 'Performance Optimization'],
     iconBg: 'bg-purple-600',
-    icon: 'Code'
+    icon: 'Radio'
   }
 ];
 
@@ -232,21 +223,21 @@ export const technologyCategories: TechnologyCategory[] = [
     icon: 'Smartphone',
     iconColor: 'text-blue-600',
     technologies: [
-      { name: 'React Native', rating: 5 },
-      { name: 'Flutter', rating: 4 },
-      { name: 'Xamarin', rating: 3 },
-      { name: 'Ionic', rating: 3 }
+      { name: 'Flutter', rating: 5 },
+      { name: 'Dart', rating: 5 },
+      { name: 'Swift (iOS Native)', rating: 4 },
+
     ]
   },
   {
-    name: 'Languages',
+    name: 'Architecture & Patterns',
     icon: 'Code',
     iconColor: 'text-green-600',
     technologies: [
-      { name: 'JavaScript/TypeScript', rating: 5 },
-      { name: 'Dart', rating: 4 },
-      { name: 'Swift', rating: 3 },
-      { name: 'Kotlin', rating: 3 }
+      { name: 'Clean Architecture', rating: 5 },
+      { name: 'BLoC/Cubit', rating: 5 },
+      { name: 'SOLID Principles', rating: 5 },
+      { name: 'Design Patterns', rating: 4 }
     ]
   },
   {
@@ -254,10 +245,11 @@ export const technologyCategories: TechnologyCategory[] = [
     icon: 'Server',
     iconColor: 'text-purple-600',
     technologies: [
-      { name: 'Node.js', rating: 5 },
       { name: 'Firebase', rating: 5 },
-      { name: 'MongoDB', rating: 4 },
-      { name: 'PostgreSQL', rating: 3 }
+      { name: 'REST APIs', rating: 5 },
+      { name: 'PostgreSQL', rating: 4 },
+      { name: 'Golang', rating: 4 },
+      { name: '.NET Web API', rating: 4 }
     ]
   },
   {
@@ -266,9 +258,11 @@ export const technologyCategories: TechnologyCategory[] = [
     iconColor: 'text-orange-600',
     technologies: [
       { name: 'Git & GitHub', rating: 5 },
-      { name: 'Docker', rating: 4 },
-      { name: 'CI/CD', rating: 4 },
-      { name: 'Jest & Detox', rating: 4 }
+      { name: 'Flutter Flavors', rating: 5 },
+      { name: 'GoRouter', rating: 5 },
+      { name: 'GetIt (DI)', rating: 5 },
+      { name: 'Secure Storage', rating: 4 }
     ]
-  }
+  },
+  
 ];

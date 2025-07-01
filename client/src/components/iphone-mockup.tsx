@@ -1,11 +1,5 @@
 import { motion } from 'framer-motion';
 import { 
-  CheckSquare, 
-  Heart, 
-  PiggyBank, 
-  UtensilsCrossed, 
-  Plane, 
-  Brain,
   Wifi,
   Signal,
   Battery
@@ -16,19 +10,7 @@ interface IPhoneMockupProps {
   onAppClick: (appId: string) => void;
 }
 
-const iconMap = {
-  CheckSquare,
-  Heart,
-  PiggyBank,
-  UtensilsCrossed,
-  Plane,
-  Brain
-};
-
 export function IPhoneMockup({ onAppClick }: IPhoneMockupProps) {
-  const getIcon = (iconName: string) => {
-    return iconMap[iconName as keyof typeof iconMap] || CheckSquare;
-  };
 
   return (
     <div className="flex justify-center">
@@ -60,7 +42,6 @@ export function IPhoneMockup({ onAppClick }: IPhoneMockupProps) {
                 {/* App icons grid */}
                 <div className="grid grid-cols-4 gap-4">
                   {apps.map((app) => {
-                    const IconComponent = getIcon(app.icon);
                     return (
                       <motion.div
                         key={app.id}
@@ -70,8 +51,18 @@ export function IPhoneMockup({ onAppClick }: IPhoneMockupProps) {
                         whileTap={{ scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                       >
-                        <div className={`w-16 h-16 ${app.iconBg} rounded-2xl flex items-center justify-center shadow-lg`}>
-                          <IconComponent className="text-white w-8 h-8" />
+                        <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg overflow-hidden">
+                          <img 
+                            src={app.imageUrl} 
+                            alt={app.name}
+                            className="w-full h-full object-cover rounded-2xl"
+                            onError={(e) => {
+                              // Fallback to a gradient background if image fails to load
+                              e.currentTarget.style.display = 'none';
+                              e.currentTarget.parentElement!.className = 'w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg';
+                              e.currentTarget.parentElement!.innerHTML = `<div class="text-white text-xs font-bold text-center">${app.name.split(' ')[0]}</div>`;
+                            }}
+                          />
                         </div>
                         <p className="text-white text-xs text-center mt-1 truncate">{app.name}</p>
                       </motion.div>

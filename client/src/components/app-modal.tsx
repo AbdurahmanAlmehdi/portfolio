@@ -5,14 +5,6 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { type App } from '@/data/portfolio-data';
-import { 
-  CheckSquare, 
-  Heart, 
-  PiggyBank, 
-  UtensilsCrossed, 
-  Plane, 
-  Brain
-} from 'lucide-react';
 
 interface AppModalProps {
   app: App | null;
@@ -20,28 +12,17 @@ interface AppModalProps {
   onClose: () => void;
 }
 
-const iconMap = {
-  CheckSquare,
-  Heart,
-  PiggyBank,
-  UtensilsCrossed,
-  Plane,
-  Brain
-};
-
 export function AppModal({ app, isOpen, onClose }: AppModalProps) {
   if (!app) return null;
 
-  const IconComponent = iconMap[app.icon as keyof typeof iconMap] || CheckSquare;
+
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-4">
-            <div className={`w-16 h-16 ${app.iconBg} rounded-2xl flex items-center justify-center`}>
-              <IconComponent className="text-white w-8 h-8" />
-            </div>
+            <img src={app.imageUrl} alt={app.name} className="w-16 h-16 rounded-2xl" />
             <div>
               <h2 className="text-2xl font-bold text-gray-900">{app.name}</h2>
               <p className="text-gray-600">{app.category}</p>
@@ -81,22 +62,20 @@ export function AppModal({ app, isOpen, onClose }: AppModalProps) {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Screenshots</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4" style={{ visibility: app.screenshots.length > 0 ? 'visible' : 'hidden' }}>Screenshots</h3>
             <div className="grid grid-cols-2 gap-4">
-              {[1, 2, 3, 4].map((i) => (
-                <Card key={i} className="bg-gray-100 rounded-lg aspect-[9/16] flex items-center justify-center">
+              {app.screenshots.map((screenshot, index) => (
+                <Card key={index} className="bg-gray-100 rounded-lg aspect-[9/16] flex items-center justify-center">
                   <CardContent className="p-0">
                     <div className="w-full h-full flex items-center justify-center">
-                      <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
-                        <IconComponent className="w-6 h-6 text-gray-500" />
-                      </div>
+                      < img src={screenshot} alt={app.name} className="w-full h-full object-cover rounded-lg" />
                     </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
             
-            <div className="mt-6 space-y-3">
+            {/* <div className="mt-6 space-y-3">
               <Button className="w-full" variant="outline">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 View Live Demo
@@ -105,7 +84,7 @@ export function AppModal({ app, isOpen, onClose }: AppModalProps) {
                 <Github className="w-4 h-4 mr-2" />
                 View Source Code
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </DialogContent>

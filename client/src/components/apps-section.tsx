@@ -2,23 +2,6 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { apps } from '@/data/portfolio-data';
-import { 
-  CheckSquare, 
-  Heart, 
-  PiggyBank, 
-  UtensilsCrossed, 
-  Plane, 
-  Brain
-} from 'lucide-react';
-
-const iconMap = {
-  CheckSquare,
-  Heart,
-  PiggyBank,
-  UtensilsCrossed,
-  Plane,
-  Brain
-};
 
 export function AppsSection() {
   return (
@@ -39,7 +22,7 @@ export function AppsSection() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {apps.map((app, index) => {
-            const IconComponent = iconMap[app.icon as keyof typeof iconMap] || CheckSquare;
+
             return (
               <motion.div
                 key={app.id}
@@ -51,9 +34,7 @@ export function AppsSection() {
                 <Card className="bg-gray-50 hover:shadow-lg transition-shadow duration-300 h-full">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <div className={`w-12 h-12 ${app.iconBg} rounded-xl flex items-center justify-center`}>
-                        <IconComponent className="text-white w-6 h-6" />
-                      </div>
+                        <img src={app.imageUrl} alt={app.name} className="w-12 h-12 rounded-xl" />
                       <div className="ml-4">
                         <h3 className="text-lg font-semibold text-gray-900">{app.name}</h3>
                         <p className="text-gray-600 text-sm">{app.category}</p>

@@ -9,7 +9,7 @@ import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -79,36 +79,30 @@ export function ContactSection() {
                   <div className="space-y-4">
                     <div className="flex items-center">
                       <Mail className="text-blue-600 w-6 h-6 mr-4" />
-                      <span className="text-gray-700">alex.morgan@email.com</span>
+                      <span className="text-gray-700">abdurahman.i.work@gmail.com</span>
                     </div>
                     <div className="flex items-center">
                       <Phone className="text-blue-600 w-6 h-6 mr-4" />
-                      <span className="text-gray-700">+1 (555) 123-4567</span>
+                      <span className="text-gray-700">+218945014643</span>
                     </div>
                     <div className="flex items-center">
                       <MapPin className="text-blue-600 w-6 h-6 mr-4" />
-                      <span className="text-gray-700">San Francisco, CA</span>
+                      <span className="text-gray-700">Tripoli, Libya</span>
                     </div>
                     <div className="flex items-center">
                       <Linkedin className="text-blue-600 w-6 h-6 mr-4" />
-                      <span className="text-gray-700">linkedin.com/in/alexmorgan</span>
+                      <span className="text-gray-700">linkedin.com/in/abdurahmanibrahem</span>
                     </div>
                   </div>
                   
                   <div className="mt-8">
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">Follow Me</h4>
                     <div className="flex space-x-4">
-                      <a href="#" className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors duration-200">
-                        <Twitter className="w-5 h-5" />
-                      </a>
-                      <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-900 transition-colors duration-200">
+                      <a href="https://github.com/AbdurahmanIbrahem" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-900 transition-colors duration-200">
                         <Github className="w-5 h-5" />
                       </a>
-                      <a href="#" className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors duration-200">
+                      <a href="https://www.linkedin.com/in/abdurahmanibrahem/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors duration-200">
                         <Linkedin className="w-5 h-5" />
-                      </a>
-                      <a href="#" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition-colors duration-200">
-                        <Youtube className="w-5 h-5" />
                       </a>
                     </div>
                   </div>
